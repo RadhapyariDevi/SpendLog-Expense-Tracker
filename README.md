@@ -17,8 +17,8 @@ SpendLog is a full-stack financial tracking application built with a modern serv
 - **Deployment:** Vercel
 
 ### Database Schema
-The system utilizes a relational model to ensure data integrity:
-Budgets Table: Stores budget name, amount, icon, and the owner's email.
-Expenses Table: Stores expense name, amount, and a foreign key (budgetId) linking it to the primary budget table.
+The system utilizes a relational model to ensure data integrity<br>
+- Budgets Table: Stores budget name, amount, icon, and the owner's email.
+- Expenses Table: Stores expense name, amount, and a foreign key (budgetId) linking it to the primary budget table.
 ### Live Website:
 [https://spend-log-expense-tracker.vercel.app/](https://spend-log-expense-tracker.vercel.app/)
