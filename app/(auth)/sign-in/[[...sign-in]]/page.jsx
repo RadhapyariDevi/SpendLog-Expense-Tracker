@@ -32,12 +32,12 @@ export default function Page() {
             <SignIn 
             appearance={{
               variables: {
-                colorPrimary: "#E83C91", 
+                colorPrimary: "#3E7B27", 
                 borderRadius: "0.75rem",
               },
               elements: {
                 formButtonPrimary:
-                  "bg-[#E83C91] hover:bg-pink-600 text-white shadow-md",
+                  "bg-[#3E7B27] hover:bg-secondary text-white shadow-md",
                 card: "shadow-xl",
               },
             }}
