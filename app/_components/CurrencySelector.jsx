@@ -1,10 +1,25 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { CURRENCIES } from "@/config/currency";
 import { setCurrency } from "@/lib/currencyStore";
 
 export default function CurrencySelector() {
-    
+  const [selectedCurrency, setSelectedCurrency] = useState("INR");
+
+  useEffect(() => {
+    const saved = localStorage.getItem("currency");
+    if (saved) {
+      setSelectedCurrency(saved);
+    }
+  }, []);
+
+  const handleChange = (e) => {
+    const val = e.target.value;
+    setCurrency(val);
+    window.location.reload();
+  };
+
   return (
     <div className="m-5 p-6 bg-accent-foreground dark:bg-gray-800 rounded-lg shadow-md flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6 border border-gray-200 dark:border-gray-700">
       <div className="flex flex-col">
@@ -18,11 +33,8 @@ export default function CurrencySelector() {
 
       <select
         className="mt-3 sm:mt-0 px-4 py-2 text-gray-900 dark:text-gray-100 bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary transition"
-        defaultValue={localStorage.getItem("currency") || "INR"}
-        onChange={(e) => {
-          setCurrency(e.target.value);
-          window.location.reload();
-        }}
+        value={selectedCurrency}
+        onChange={handleChange}
       >
         {Object.entries(CURRENCIES).map(([key, c]) => (
           <option key={key} value={key}>
