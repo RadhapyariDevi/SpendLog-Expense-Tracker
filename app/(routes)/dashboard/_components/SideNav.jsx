@@ -2,14 +2,10 @@
 import React from "react";
 import Image from "next/image";
 import {
-  Currency,
-  CurrencyIcon,
   DollarSign,
   LayoutGrid,
   PiggyBank,
   ReceiptText,
-  Settings,
-  ShieldCheck,
 } from "lucide-react";
 import { UserButton } from "@clerk/nextjs";
 import { usePathname } from "next/navigation";
@@ -57,7 +53,7 @@ function SideNav({ closeSideNav }) {
   };
 
   return (
-    <div className="h-screen p-5 pt-4 border shadow-sm">
+    <div className="h-screen p-5 border shadow-sm">
       <Image
         src={"/SpendLog.png"}
         alt="Logo"

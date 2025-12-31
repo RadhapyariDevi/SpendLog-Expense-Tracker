@@ -11,7 +11,7 @@ function Hero() {
           
           {isSignedIn ? (
             <h2 className="mb-3 text-3xl text-secondary sm:text-5xl">
-              Welcome to SpendLog 🎉
+              Welcome to SpendLog
             </h2>
           ) : (
             ""

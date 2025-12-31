@@ -98,10 +98,10 @@ function Page() {
   }, [expensesList, selectedYear, selectedMonth, filterWeek]);
 
   return (
-    <div className="ml-5 mr-5">
-      <div className="mt-5 flex justify-between items-center flex-wrap gap-4">
+    <div className="pb-4 md:p-4">
+      <div className="mt-5 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-5">
         <h2 className="font-bold text-lg">Latest Expenses</h2>
-        <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center gap-2 w-full sm:w-auto">
           <button
             onClick={() => setFilterWeek(!filterWeek)}
             className={`px-4 py-2 rounded-lg border text-sm transition-all ${
@@ -111,7 +111,7 @@ function Page() {
             {filterWeek ? "Clear Week Filter" : "This Week"}
           </button>
           {!filterWeek && (
-            <>
+            <div className="flex gap-2 flex-1 sm:flex-none">
               <Combobox
                 items={yearOptions}
                 value={selectedYear}
@@ -126,7 +126,7 @@ function Page() {
                 placeholder="Month"
                 width="150px"
               />
-            </>
+            </div>
           )}
         </div>
       </div>
